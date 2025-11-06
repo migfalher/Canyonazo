@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Boton
+  - Bola
   layers:
   - Default
   - TransparentFX

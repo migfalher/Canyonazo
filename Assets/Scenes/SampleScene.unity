@@ -710,7 +710,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1905965744324381685, guid: 134e37f71b34ef54abebc91e739db155, type: 3}
       propertyPath: m_LocalScale.x
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1905965744324381685, guid: 134e37f71b34ef54abebc91e739db155, type: 3}
       propertyPath: m_LocalScale.y
@@ -718,7 +718,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1905965744324381685, guid: 134e37f71b34ef54abebc91e739db155, type: 3}
       propertyPath: m_LocalScale.z
-      value: 10
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 1905965744324381685, guid: 134e37f71b34ef54abebc91e739db155, type: 3}
       propertyPath: m_LocalPosition.x
@@ -774,6 +774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1569657677}
+  - component: {fileID: 1569657678}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -796,6 +797,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1569657678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569657676}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 214fe028178af9f418c78e7892936549, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::GameManager
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -803,9 +816,9 @@ SceneRoots:
   - {fileID: 330585546}
   - {fileID: 410087041}
   - {fileID: 832575519}
+  - {fileID: 1569657677}
   - {fileID: 1494943118}
+  - {fileID: 771848791}
   - {fileID: 1436927347}
   - {fileID: 668421868}
-  - {fileID: 771848791}
-  - {fileID: 1569657677}
   - {fileID: 482219506}
