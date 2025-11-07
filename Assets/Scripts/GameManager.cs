@@ -3,15 +3,17 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     // Shared objects
-    public GameObject Canyon;
+    public GameObject canyon;
 
     // Attributes
     private int ballCounter;
+    private CanyonScript canyonScript;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         ballCounter = 0;
+        if (canyon != null) {canyonScript = canyon.GetComponent<CanyonScript>();}
     }
 
     // Update is called once per frame
@@ -38,8 +40,8 @@ public class GameManager : MonoBehaviour
             // if so:
             // activate event of clicked object
             GameObject coll = hit.transform.gameObject;
-            string parentName = coll.transform.parent.name;
-            switch (parentName)
+            string name = coll.transform.name;
+            switch (name)
             {
                 case "Boton_Green":
                     OnGreenClicked();
