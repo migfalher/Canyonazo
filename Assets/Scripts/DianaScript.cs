@@ -2,6 +2,9 @@ using UnityEngine;
 
 public class DianaScript : MonoBehaviour
 {
+    // Public components
+    public Material newMaterial;
+
     // Private attributes
     private int count;
 
@@ -26,8 +29,14 @@ public class DianaScript : MonoBehaviour
             switch (count)
             {
                 case 1:
-                    Material newMat = Resources.Load<Material>("Material/Yellow");
-                    this.GetComponent<Renderer>().material = newMat;
+                    if (newMaterial != null)
+                    {
+                        this.GetComponent<Renderer>().material.color = newMaterial.color;
+                    }
+                    else
+                    {
+                        this.GetComponent<Renderer>().material.color = Color.indianRed;
+                    }
                     break;
                 case 2:
                     this.gameObject.SetActive(false);

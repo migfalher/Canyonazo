@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -12,11 +13,14 @@ public class CanyonScript : MonoBehaviour
 
     // Private Components
     private GameObject spawn;
+    private GameObject tube;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         spawn = GameObject.Find("Canyon_Spawn");
+        tube = GameObject.Find("Canyon_Tubo");
+        if (matList.Count > 0) { tube.GetComponent<Renderer>().material = matList[0]; }
         Debug.Log(spawn.name);
     }
 
@@ -35,9 +39,12 @@ public class CanyonScript : MonoBehaviour
         if (rb != null)
         {
             // Apply force to Rigidbody
-            Vector3 bulletForce = spawn.transform.up * force;
+            Vector3 bulletForce = spawn.transform.up * force * bullet.GetComponent<Rigidbody>().mass;
             rb.AddForce(bulletForce, ForceMode.Impulse);
         }
+
+        // Change color
+        StartCoroutine(this.ChangeColor());
     }
 
     // Method shoot ammo randomly
@@ -76,6 +83,17 @@ public class CanyonScript : MonoBehaviour
             Vector3 bulletForce = spawn.transform.up * UnityEngine.Random.Range(5.0f, 50.0f);
             rb.AddForce(bulletForce, ForceMode.Impulse);
         }
+
+        // Change color
+        StartCoroutine( this.ChangeColor() );
+    }
+
+    // Method change cannon color
+    private IEnumerator ChangeColor()
+    {
+        tube.GetComponent<Renderer>().material = matList[matList.Count - 1];
+        yield return new WaitForSeconds( 0.5f );
+        tube.GetComponent<Renderer>().material = matList[0];
     }
 
 }

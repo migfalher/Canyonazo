@@ -568,11 +568,11 @@ PrefabInstance:
     - target: {fileID: 4833021071522347099, guid: 4eab65339e04897439eac775f65d8b62, type: 3}
       propertyPath: 'matList.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 9d6a8fdeff20e7b4696393c87d43648b, type: 2}
+      objectReference: {fileID: 2100000, guid: a60e32480bf9cc24b994b8358e109582, type: 2}
     - target: {fileID: 4833021071522347099, guid: 4eab65339e04897439eac775f65d8b62, type: 3}
       propertyPath: 'matList.Array.data[1]'
       value: 
-      objectReference: {fileID: 2100000, guid: 81039ed512e8cd54d8b697ba7dc9f9f2, type: 2}
+      objectReference: {fileID: 2100000, guid: 9d6a8fdeff20e7b4696393c87d43648b, type: 2}
     - target: {fileID: 4833021071522347099, guid: 4eab65339e04897439eac775f65d8b62, type: 3}
       propertyPath: 'matList.Array.data[2]'
       value: 
@@ -584,7 +584,7 @@ PrefabInstance:
     - target: {fileID: 4833021071522347099, guid: 4eab65339e04897439eac775f65d8b62, type: 3}
       propertyPath: 'matList.Array.data[4]'
       value: 
-      objectReference: {fileID: 2100000, guid: a60e32480bf9cc24b994b8358e109582, type: 2}
+      objectReference: {fileID: 2100000, guid: 81039ed512e8cd54d8b697ba7dc9f9f2, type: 2}
     - target: {fileID: 5421852734239820082, guid: 4eab65339e04897439eac775f65d8b62, type: 3}
       propertyPath: m_Name
       value: Canyon
@@ -974,6 +974,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9175814361413560515, guid: 92717db8a1552234fbdb3f5868dac15a, type: 3}
+      propertyPath: newMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: f2e085ac274f0e646a58044369ea85a8, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
