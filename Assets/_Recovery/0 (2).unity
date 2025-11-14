@@ -562,10 +562,6 @@ PrefabInstance:
       value: 35
       objectReference: {fileID: 0}
     - target: {fileID: 4833021071522347099, guid: 4eab65339e04897439eac775f65d8b62, type: 3}
-      propertyPath: minDistance
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 4833021071522347099, guid: 4eab65339e04897439eac775f65d8b62, type: 3}
       propertyPath: matList.Array.size
       value: 5
       objectReference: {fileID: 0}

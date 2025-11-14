@@ -9,6 +9,7 @@ public class CanyonScript : MonoBehaviour
     // Public Attributes
     public GameObject ammo;
     public float force;
+    public float minDistance;
     public List<Material> matList;
 
     // Private Components
@@ -21,7 +22,6 @@ public class CanyonScript : MonoBehaviour
         spawn = GameObject.Find("Canyon_Spawn");
         tube = GameObject.Find("Canyon_Tubo");
         if (matList.Count > 0) { tube.GetComponent<Renderer>().material = matList[0]; }
-        Debug.Log(spawn.name);
     }
 
     // Method shoot ammo
@@ -44,7 +44,7 @@ public class CanyonScript : MonoBehaviour
         }
 
         // Change color
-        StartCoroutine(this.ChangeColor());
+        StartCoroutine( this.ChangeColor(bullet) );
     }
 
     // Method shoot ammo randomly
@@ -58,10 +58,11 @@ public class CanyonScript : MonoBehaviour
         );
 
         // Apply random scale
+        float rand = UnityEngine.Random.Range(0.5f, 5.0f);
         bullet.transform.localScale = new Vector3(
-            UnityEngine.Random.Range(0.5f, 5.0f),
-            UnityEngine.Random.Range(0.5f, 5.0f),
-            UnityEngine.Random.Range(0.5f, 5.0f)
+            rand,
+            rand,
+            rand
         );
 
         // If more than one available, apply random material
@@ -85,14 +86,16 @@ public class CanyonScript : MonoBehaviour
         }
 
         // Change color
-        StartCoroutine( this.ChangeColor() );
+        StartCoroutine( this.ChangeColor(bullet) );
     }
 
-    // Method change cannon color
-    private IEnumerator ChangeColor()
+    // Method change cannon color until bullet reaches minDistance
+    private IEnumerator ChangeColor(GameObject bullet)
     {
         tube.GetComponent<Renderer>().material = matList[matList.Count - 1];
-        yield return new WaitForSeconds( 0.5f );
+        yield return new WaitUntil(() =>
+            Vector3.Distance(spawn.transform.position, bullet.transform.position) > minDistance
+        );
         tube.GetComponent<Renderer>().material = matList[0];
     }
 

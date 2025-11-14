@@ -18,10 +18,7 @@ public class GameManager : MonoBehaviour
     {
         ballCounter = 0;
         if (canyon != null) {canyonScript = canyon.GetComponent<CanyonScript>();}
-        if (canvas != null) {
-            tmp = canvas.GetComponentInChildren<TextMeshProUGUI>();
-            Debug.Log(tmp);
-        }
+        if (canvas != null) {tmp = canvas.GetComponentInChildren<TextMeshProUGUI>();}
     }
 
     // Update is called once per frame

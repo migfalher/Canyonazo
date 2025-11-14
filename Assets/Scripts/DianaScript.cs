@@ -7,21 +7,23 @@ public class DianaScript : MonoBehaviour
 
     // Private attributes
     private int count;
+    private bool rotate;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         count = 0;
+        rotate = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (rotate) { this.transform.Rotate(0, 0, 1); }
     }
 
-    // Method 
-    private void OnCollisionEnter(Collision coll)
+    // Method detect collision
+    private void OnTriggerEnter(Collider coll)
     {
         if (coll.gameObject.tag == "Bala")
         {
@@ -39,12 +41,16 @@ public class DianaScript : MonoBehaviour
                     }
                     break;
                 case 2:
+                    rotate = true;
+                    break;
+                case 3:
                     this.gameObject.SetActive(false);
                     break;
                 default:
                     break;
             }
         }
-
     }
+
+
 }
